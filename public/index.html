@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog de Football</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+
+    <div class="header-top">
+      <h1>Blog de Football</h1>
+          <nav class="navbar">
+  <a href="index.html" id="nav-home">Accueil</a>
+  <a href="today.html" id="nav-today">Articles du jour</a>
+</nav>
+      <p>Publie tes infos foot avec photo, date et texte</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Formulaire de création -->
+    <section class="panel">
+      <h2>Nouvel article</h2>
+      <form id="post-form">
+        <div class="form-row">
+          <label for="title">Titre</label>
+          <input type="text" id="title" placeholder="Ex: Amad Diallo en feu à Sunderland" required />
+        </div>
+
+        <div class="form-row">
+          <label for="date">Date</label>
+          <input type="date" id="date" required />
+        </div>
+
+        <div class="form-row">
+          <label for="image">Image (optionnel)</label>
+          <input type="file" id="image" accept="image/*" />
+        </div>
+
+        <div class="form-row">
+          <label for="content">Texte</label>
+          <textarea id="content" rows="4" placeholder="Analyse du match, rumeur de transfert, opinion..." required></textarea>
+        </div>
+
+        <button type="submit">Publier</button>
+        <p id="form-message" class="form-message"></p>
+      </form>
+    </section>
+
+    <!-- Liste des articles -->
+    <section class="panel">
+      <h2>Articles récents</h2>
+      <div id="posts-container" class="posts-container">
+        <!-- Rempli par JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <small>Blog Foot – Node.js, MongoDB, images base64</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
