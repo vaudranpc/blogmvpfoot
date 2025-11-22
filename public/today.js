@@ -116,10 +116,13 @@ function openZoom(post) {
 
   content.innerHTML = `
     <article class="zoom-card">
-      ${imgHtml}
+      <div class="zoom-image-wrapper">
+        ${imgHtml}
+      </div>
       <div class="zoom-body">
         <h2>${post.title}</h2>
         <p class="zoom-date">${dateStr}</p>
+        <br>
         <p class="zoom-text">${escapeHtml(post.content).replace(/\n/g, '<br>')}</p>
         <button id="zoom-close-btn" class="zoom-close-btn">Fermer</button>
       </div>
@@ -130,6 +133,7 @@ function openZoom(post) {
 
   document.getElementById('zoom-close-btn').addEventListener('click', closeZoom);
 }
+
 
 function closeZoom() {
   const overlay = document.getElementById('zoom-overlay');
