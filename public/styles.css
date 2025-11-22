@@ -68,8 +68,8 @@ body {
   padding: 0.5rem 0.6rem;
   border-radius: 0.5rem;
   border: 1px solid #374151;
-  background: #020617;
-  color: #e5e7eb;
+  background: #e7e8ed;
+  color: #0f141d;
 }
 
 .form-row input[type="file"] {
