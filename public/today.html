@@ -1,101 +1,60 @@
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Idées de vidéos – Blog Foot</title>
+  <title>Articles par date – Blog Foot</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
-  <!-- HEADER -->
   <header class="header">
-    <h1>Idées de vidéos</h1>
-
-    <div class="header-top">
-      <nav class="navbar">
-        <a href="index.html" id="nav-home">Accueil</a>
-        <a href="today.html" id="nav-today">Articles par date</a>
-        <a href="ideas.html" id="nav-ideas">Idées vidéos</a>
-      </nav>
-
-      <p>Gère ici toutes tes idées (avec synchronisation MongoDB)</p>
+    
+      <h1>Articles par date</h1>
+      <div class="header-top">
+          <nav class="navbar">
+    <a href="index.html" id="nav-home">Accueil</a>
+    <a href="today.html" id="nav-today">Articles par date</a>
+    <a href="ideas.html" id="nav-today">Aidee pour radio MVP foot</a>
+  </nav>
+      <p>Choisis une date et vois les posts foot publiés ce jour-là</p>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- NAV commune -->
+
+
   <main class="container">
     <section class="panel">
+      <h2>Filtrer par date</h2>
 
-      <h2>Ajouter une idée</h2>
-
-      <div class="form-row">
-        <input id="title" type="text" placeholder="Titre de la vidéo" required>
-        <input id="date" type="date">
+      <div class="form-row" style="max-width:220px;margin-bottom:0.8rem;">
+        <label for="date-select">Date</label>
+        <input type="date" id="date-select" />
       </div>
 
-      <div class="form-row">
-        <textarea id="desc" rows="2" placeholder="Courte description / angle"></textarea>
+      <div id="today-posts" class="posts-container">
+        <!-- Rempli par today.js -->
       </div>
-
-      <div class="form-row">
-        <input id="tags" type="text" placeholder="Tags (séparés par des virgules)">
-        <button id="addBtn" class="btn-primary">Ajouter</button>
-      </div>
-
-      <h2 style="margin-top:1.2rem;">Filtrer / Rechercher</h2>
-
-      <div class="form-row" style="flex-wrap:wrap;gap:0.6rem;align-items:center;margin-top:0.6rem">
-
-        <label>Filtre :
-          <select id="filter">
-            <option value="all">Tous</option>
-            <option value="pending">À faire</option>
-            <option value="done">Terminés</option>
-          </select>
-        </label>
-
-        <label>
-          Rechercher :
-          <input id="search" type="text" placeholder="mot-clé">
-        </label>
-
-        <div style="margin-left:auto;display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap">
-          <button id="exportBtn" class="btn-ghost">Exporter JSON</button>
-
-          <label class="btn-ghost" style="padding:0.35rem 0.6rem;cursor:pointer;">
-            Importer
-            <input id="importFile" type="file" accept="application/json" style="display:none">
-          </label>
-
-          <button id="clearAll" class="btn-ghost">Tout supprimer</button>
-        </div>
-      </div>
-
-      <div id="ideas" class="ideas-list"></div>
-
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Overlay pour le zoom -->
+  <div id="zoom-overlay">
+    <div id="zoom-content"></div>
+  </div>
+
   <footer class="footer">
-    <small>Blog Foot – Idées de vidéos</small>
+    <small>Blog Foot – Vue par date</small>
   </footer>
 
-  <script src="ideas.js"></script>
-
+  <script src="today.js"></script>
   <script>
-    // Activer l’onglet courant dans la navbar
+    // Activer l’onglet nav courant
     const path = window.location.pathname;
     if (path.includes("index")) {
       document.getElementById("nav-home").classList.add("active");
     } else if (path.includes("today")) {
       document.getElementById("nav-today").classList.add("active");
-    } else if (path.includes("ideas")) {
-      document.getElementById("nav-ideas").classList.add("active");
     }
   </script>
-
 </body>
 </html>
