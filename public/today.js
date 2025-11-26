@@ -65,10 +65,10 @@ function renderPostsForDate(posts, dateStr) {
     }
 
     const dateObj = new Date(post.date);
-    const dateDisplay = dateObj.toLocaleDateString('fr-FR', {
+    const dateDisplay = dateObj.toLocaleDateString('fr-CA', {
       year: 'numeric',
       month: 'short',
-      day: '2-digit'
+      day: 'numeric'
     });
 
     card.innerHTML = `
@@ -108,10 +108,10 @@ function openZoom(post) {
   }
 
   const dateObj = new Date(post.date);
-  const dateStr = dateObj.toLocaleDateString('fr-FR', {
+  const dateStr = dateObj.toLocaleDateString('fr-CA', {
     year: 'numeric',
     month: 'long',
-    day: '2-digit'
+    day: 'numeric'
   });
 
   content.innerHTML = `

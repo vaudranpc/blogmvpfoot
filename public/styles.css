@@ -325,3 +325,91 @@ button[type="submit"]:hover {
 .navbar a:hover::before {
   left: 120%;
 }
+
+
+.ideas-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* CARD */
+.idea-card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+  border: 1px solid #374151;
+}
+
+.idea-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.idea-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin-bottom: 0.3rem;
+}
+
+.idea-desc {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-bottom: 0.6rem;
+}
+
+.idea-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.idea-tag {
+  background: #374151;
+  color: #e5e7eb;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  border-radius: 8px;
+}
+
+.idea-footer {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.idea-controls {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-ghost {
+  background: #374151;
+  color: #e5e7eb;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.15s;
+}
+
+.btn-ghost:hover {
+  background: #4b5563;
+}
+
+.btn-danger {
+  background: #b91c1c;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}

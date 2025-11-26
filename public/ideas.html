@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Idées de vidéos — Blog Foot</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<nav class="navbar">
+    <a href="index.html" id="nav-home">Accueil</a>
+    <a href="today.html" id="nav-today">Articles par date</a>
+    <a href="ideas.html" id="nav-ideas">Idées pour radio MVP foot</a>
+</nav>
+
+<main class="container">
+<section class="panel">
+<h1>Idées de vidéos (sync MongoDB)</h1>
+
+<div class="form-row">
+    <input id="title" type="text" placeholder="Titre de la vidéo" required>
+    <input id="date" type="date">
+</div>
+
+<div class="form-row">
+    <textarea id="desc" rows="2" placeholder="Courte description / angle"></textarea>
+</div>
+
+<div class="form-row">
+    <input id="tags" type="text" placeholder="Tags (séparés par des virgules)">
+    <button id="addBtn" class="btn-primary">Ajouter</button>
+</div>
+
+<div style="display:flex;gap:0.6rem;align-items:center;margin-top:0.6rem">
+    <label>Filtre:
+        <select id="filter">
+            <option value="all">Tous</option>
+            <option value="pending">À faire</option>
+            <option value="done">Terminés</option>
+        </select>
+    </label>
+
+    <label>Rechercher:
+        <input id="search" type="text" placeholder="mot-clé">
+    </label>
+
+    <div style="margin-left:auto;display:flex;gap:0.4rem;align-items:center">
+        <button id="exportBtn" class="btn-ghost">Exporter JSON</button>
+
+        <label class="btn-ghost" style="padding:0.35rem 0.6rem;cursor:pointer">
+            Importer
+            <input id="importFile" type="file" accept="application/json" style="display:none">
+        </label>
+
+        <button id="clearAll" class="btn-ghost">Tout supprimer (BD+UI)</button>
+    </div>
+</div>
+
+<div id="ideas" class="ideas-list"></div>
+</section>
+</main>
+
+<script src="ideas.js"></script>
+</body>
+</html>
